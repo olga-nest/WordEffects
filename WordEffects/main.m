@@ -13,13 +13,13 @@ int main(int argc, const char * argv[]) {
         char option = '\0';
         char operation = '\0';
         
-        while(1) {
+      while(1) {
             
             printf("Lets start? (y/n): ");
-            fgets(&option, 1, stdin);
+            scanf(" %c", &option);
             
             if (option == 'y') {
-    
+ 
             
         char inputChars[255];
         
@@ -32,14 +32,14 @@ int main(int argc, const char * argv[]) {
         NSString *inputString = [NSString stringWithUTF8String:inputChars];
                 
         printf("What do you want to do with your string?\n\n");
-        printf("A. Uppercase");
-        printf("B. Lowercase");
-        printf("C. Numberize");
-        printf("D. Canadianize");
-        printf("E. Respond");
-        printf("F. De-Space-It");
+        printf("A. Uppercase. \n");
+        printf("B. Lowercase. \n");
+        printf("C. Numberize. \n");
+        printf("D. Canadianize. \n");
+        printf("E. Respond. \n");
+        printf("F. De-Space-It. \n");
                 
-        fgets(&operation, 1, stdin);
+        scanf(" %c", &operation);
                 
                 switch (operation) {
                     case 'A': NSLog(@"%@", [inputString uppercaseString]); break;
@@ -50,7 +50,7 @@ int main(int argc, const char * argv[]) {
                 }
         
         
-            } else {
+          } else {
                 break; }
         
         }
