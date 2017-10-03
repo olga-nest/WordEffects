@@ -11,16 +11,16 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         char option = '\0';
-        char operation = '\0';
+        char operation;
         
-      while(1) {
+     while(1) {
             
-            printf("Lets start? (y/n): ");
-            scanf(" %c", &option);
+            printf("Let's start? (y/n): ");
+            fgets(&option, 255, stdin);
             
             if (option == 'y') {
  
-            
+     
         char inputChars[255];
         
         printf("Input a string: ");
@@ -32,23 +32,24 @@ int main(int argc, const char * argv[]) {
         NSString *inputString = [NSString stringWithUTF8String:inputChars];
                 
         printf("What do you want to do with your string?\n\n");
-        printf("A. Uppercase. \n");
-        printf("B. Lowercase. \n");
-        printf("C. Numberize. \n");
-        printf("D. Canadianize. \n");
-        printf("E. Respond. \n");
-        printf("F. De-Space-It. \n");
+        printf("\t1. Uppercase. \n");
+        printf("\t2. Lowercase. \n");
+        printf("\t3. Numberize. \n");
+        printf("\t4. Canadianize. \n");
+        printf("\t5. Respond. \n");
+        printf("\t6. De-Space-It. \n");
                 
-        scanf(" %c", &operation);
+        fgets(&operation, 10, stdin);
                 
-                switch (operation) {
-                    case 'A': NSLog(@"%@", [inputString uppercaseString]); break;
-                    case 'B': NSLog(@"%@", [inputString lowercaseString]); break;
-                        
+            switch (operation) {
+                    case '1': NSLog(@"%@", [inputString uppercaseString]); break;
+                    case '2': NSLog(@"%@", [inputString lowercaseString]); break;
+                    case '3': NSLog(@"%ld", (long)[inputString integerValue]); break;
+                    
                     default:
                         break;
                 }
-        
+      
         
           } else {
                 break; }
