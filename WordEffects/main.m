@@ -30,6 +30,7 @@ int main(int argc, const char * argv[]) {
         printf("Your string is %s\n", inputChars);
         
         NSString *inputString = [NSString stringWithUTF8String:inputChars];
+        NSString *newString = [inputString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
                 
         printf("What do you want to do with your string?\n\n");
         printf("\t1. Uppercase. \n");
@@ -42,12 +43,23 @@ int main(int argc, const char * argv[]) {
         fgets(&operation, 10, stdin);
                 
             switch (operation) {
-                    case '1': NSLog(@"%@", [inputString uppercaseString]); break;
-                    case '2': NSLog(@"%@", [inputString lowercaseString]); break;
-                    case '3': NSLog(@"%ld", (long)[inputString integerValue]); break;
+                    case '1': NSLog(@"%@", [newString uppercaseString]); break;
+                    case '2': NSLog(@"%@", [newString lowercaseString]); break;
+                    case '3': NSLog(@"%ld", (long)[newString integerValue]); break;
                     //TODO: check if the conversion was successful or not
-                    case '4': NSLog(@"%@", [inputString stringByAppendingString:@", eh?"]);
-                    case '6': NSLog(@"%@", [inputString stringByReplacingOccurrencesOfString:@" " withString:@"-"]);
+                    case '4': NSLog(@"%@", [newString stringByAppendingString:@", eh?"]);
+                    case '5': {
+                        NSString *lastChar = [newString substringFromIndex: [inputString length] - 2];
+                    
+                        if ([lastChar isEqual: @"?"]) {
+                            NSLog(@"I don\'t know");
+                        } else if ([lastChar isEqual: @"!"]) {
+                        NSLog(@"Whoa, calm down!");
+                        } else {
+                        break;
+                           }
+                }
+                    case '6': NSLog(@"%@", [newString stringByReplacingOccurrencesOfString:@" " withString:@"-"]);
                     
                     default:
                         break;
