@@ -47,6 +47,7 @@ int main(int argc, const char * argv[]) {
                     case '3': NSLog(@"%ld", (long)[inputString integerValue]); break;
                     //TODO: check if the conversion was successful or not
                     case '4': NSLog(@"%@", [inputString stringByAppendingString:@", eh?"]);
+                    case '6': NSLog(@"%@", [inputString stringByReplacingOccurrencesOfString:@" " withString:@"-"]);
                     
                     default:
                         break;
