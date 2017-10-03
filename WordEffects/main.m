@@ -45,6 +45,8 @@ int main(int argc, const char * argv[]) {
                     case '1': NSLog(@"%@", [inputString uppercaseString]); break;
                     case '2': NSLog(@"%@", [inputString lowercaseString]); break;
                     case '3': NSLog(@"%ld", (long)[inputString integerValue]); break;
+                    //TODO: check if the conversion was successful or not
+                    case '4': NSLog(@"%@", [inputString stringByAppendingString:@", eh?"]);
                     
                     default:
                         break;
