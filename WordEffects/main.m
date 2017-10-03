@@ -47,9 +47,8 @@ int main(int argc, const char * argv[]) {
                     case '1': NSLog(@"%@", [newString uppercaseString]); break;
                     case '2': NSLog(@"%@", [newString lowercaseString]); break;
                     case '3': NSLog(@"%ld", (long)[newString integerValue]); break;
-                    //TODO: check if the conversion was successful or not
                     case '4': NSLog(@"%@", [newString stringByAppendingString:@", eh?"]);
-                case '5': {NSString *lastChar = [newString substringFromIndex: [inputString length] - 2];
+                    case '5': {NSString *lastChar = [newString substringFromIndex: [inputString length] - 2];
                         if ([lastChar isEqual: @"?"]) {
                             NSLog(@"I don\'t know");
                         } else if ([lastChar isEqual: @"!"]) {
