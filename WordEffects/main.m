@@ -40,6 +40,8 @@ int main(int argc, const char * argv[]) {
         printf("\t4. Canadianize. \n");
         printf("\t5. Respond. \n");
         printf("\t6. De-Space-It. \n");
+        //Stretch Goals
+        printf("\t7. Word count. \n");
                 
         fgets(&operation, 10, stdin);
                 
@@ -48,7 +50,7 @@ int main(int argc, const char * argv[]) {
                     case '2': NSLog(@"%@", [newString lowercaseString]); break;
                     case '3': NSLog(@"%ld", (long)[newString integerValue]); break;
                     case '4': NSLog(@"%@", [newString stringByAppendingString:@", eh?"]);
-                    case '5': {NSString *lastChar = [newString substringFromIndex: [inputString length] - 2];
+                    case '5': { NSString *lastChar = [newString substringFromIndex: [inputString length] - 2];
                         if ([lastChar isEqual: @"?"]) {
                             NSLog(@"I don\'t know");
                         } else if ([lastChar isEqual: @"!"]) {
@@ -56,8 +58,13 @@ int main(int argc, const char * argv[]) {
                         } else {
                         break;}
                         }; break;
-                   case '6': NSLog(@"%@", [newString stringByReplacingOccurrencesOfString:@" " withString:@"-"]);
-                    
+                    case '6': NSLog(@"%@", [newString stringByReplacingOccurrencesOfString:@" " withString:@"-"]);
+                    //count elements separated by " "
+                case '7': {
+                    NSArray *words = [newString componentsSeparatedByString:@" "];
+                    NSInteger wordCount = [words count];
+                    NSLog(@"There are %li words in your string", (long)wordCount);
+                }
                     default:
                         break;
                 }
